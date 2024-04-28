@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            h1 {
+                text-align: center;
+                margin-top: 0;
+                margin-bottom: 70px;
+                font-size: 70px;
+            }
+
+            .red, .green, .blue {
+                width: 400px;
+                height: 50px;
+                margin: 20px auto;
+            }
+
+            .transparent {
+                background-color: rgba(255, 255, 255, 0.6);
+                width: 57%;
+                height: 100%;
+                margin-left: 120px;
+                border-left: 15px double rgba(0, 0, 0, 0.8);
+            }
+
+            .red {
+                background: linear-gradient(rgb(126, 9, 9), rgb(234, 28, 14), rgb(126, 9, 9));
+                box-shadow: 0 0 20px 0 rgb(126, 9, 9);
+            }
+
+            .green {
+                background: linear-gradient(rgb(9, 135, 18), rgb(5, 252, 21), rgb(9, 135, 18));
+                box-shadow: 0 0 20px 0 rgb(9, 135, 18);
+            }
+
+            .blue {
+                background: linear-gradient(rgb(21, 6, 158), rgb(25, 0, 255), rgb(21, 6, 158));
+                box-shadow: 0 0 20px 0 rgb(21, 6, 158);
+            }
+        </style>
+    </head>
+    <body>
+        <h1>CSS Color Markers</h1>
+        <div>
+            <div class="red">
+                <div class="transparent"></div>
+            </div>
+            <div class="green">
+                <div class="transparent"></div>
+            </div>
+            <div class="blue">
+                <div class="transparent"></div>
+            </div>
+        </div>
+    </body>
+</html>
