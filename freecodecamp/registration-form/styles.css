@@ -1,0 +1,82 @@
+body {
+    background-color: #1b1b32;
+    width: 30%;
+    margin: 0 auto;
+    color: white;
+    font-size: 20px;
+    /* height: 100vh; */
+}
+
+h1, h1 + p {
+    text-align: center;
+}
+
+input, textarea, select {
+    width: 100%;
+    margin: 10px 0;
+    background-color: #0a0a23;
+}
+
+input, textarea {
+    border: none;
+    padding: 0;
+    color: white;
+}
+
+select {
+    background-color: revert;
+    min-height: 2em;
+}
+
+input  {
+    min-height: 2em;
+}
+
+input[type="file"] {
+    padding-top: 3px;
+    padding-left: 3px;
+    box-sizing: border-box;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    width: initial;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+fieldset {
+    border: none;
+    border-bottom: 3px solid rgb(255, 255, 255, 0.3);
+    padding: 0;
+    margin: 0;
+}
+
+fieldset:last-of-type {
+    border: none;
+    margin-bottom: 20px;
+}
+
+a:link {
+    color: white;
+}
+
+input[type="submit"] {
+    display: block;
+    color: white;
+    background-color: grey;
+    border-color: white;
+    border-style: solid;
+    border-width: 1px;
+    width: 60%;
+    min-width: 300px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 30px;
+    font-size: 1em;
+}
+
+fieldset {
+    margin-top: 30px;
+}
