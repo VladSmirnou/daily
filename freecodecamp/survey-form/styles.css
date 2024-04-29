@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+body {
+    background-image: linear-gradient(
+      115deg,
+      rgba(58, 58, 158, 0.8),
+      rgba(136, 136, 206, 0.7)
+    ),
+    url(https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+p {
+    margin: 0;
+}
+
+legend {
+    padding: 0;
+}
+
+p:last-of-type {
+    margin-bottom: 10px;
+}
+
+header {
+    text-align: center;
+    font-size: 15px;
+    margin-top: 50px;
+    margin-bottom: 35px;
+}
+
+form {
+    padding: 45px 40px;
+    background-color: rgba(27, 27, 50, 0.8);
+    border-radius: 5px;
+}
+
+fieldset {
+    border: none;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 40px;
+    margin-left: 0;
+    padding: 0;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+}
+
+label {
+    display: block;
+}
+
+sup {
+    vertical-align: text-top;
+}
+
+input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: lightgreen;
+    font-size: inherit;
+    margin: 25px 0;
+    color: inherit;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin: 0;
+    width: 1rem;
+    height: 1rem;
+    vertical-align: top;
+}
+
+fieldset > label {
+    margin-bottom: 10px;
+}
+
+legend + label {
+    margin-top: 7px;
+}
+
+option {
+    color: black;
+}
+
+select, option:first-child {
+    color: gray;
+}
+
+.normal-input, select {
+    width: 100%;
+    height: 1.8rem;
+    margin-top: 7px;
+    font-size: 0.9rem;
+    font-family: inherit;
+    padding: 5px 0 5px 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.normal-input-label {
+    margin-bottom: 25px;
+}
+
+.container {
+    width: 40%;
+    margin: 0 auto;
+}
+
+.select-role-label {
+    margin-bottom: 25px;
+}
