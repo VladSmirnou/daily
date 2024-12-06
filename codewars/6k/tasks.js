@@ -14,3 +14,25 @@ function spinWords(string){
       return (acc.push(value), acc)
     }, []).join(' ')
 }
+
+//Who likes it?
+function likes(names) {
+    const [a, b, c, ...{ length }] = names;
+    switch (names.length) {
+        case 0: {
+            return "no one likes this"
+        }
+        case 1: {
+            return `${a} likes this`
+        }
+        case 2: {
+            return `${a} and ${b} like this`
+        }
+        case 3: {
+            return `${a}, ${b} and ${c} like this`
+        }
+        default: {
+            return `${a}, ${b} and ${length + 1} others like this`
+        }
+    }
+}
