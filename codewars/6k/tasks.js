@@ -54,4 +54,6 @@ function duplicateCount(text){
     })
     return count;
 }
+function solution(string) {
+    return string.replace(/[A-Z]/g, (v) => ` ${v}`)
 }
