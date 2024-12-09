@@ -41,3 +41,17 @@ function likes(names) {
 function createPhoneNumber(numbers){
     return `(${numbers.slice(0, 3).join('')}) ${numbers.slice(3, 6).join('')}-${numbers.slice(6).join('')}`;
 }
+
+//
+function duplicateCount(text){
+    const countMap = {}
+    for (const i of text.toLowerCase()) {
+      countMap[i] = ++countMap[i] || 1
+    }
+    let count = 0;
+    Object.values(countMap).forEach(v => {
+      if (v > 1) count++
+    })
+    return count;
+}
+}
