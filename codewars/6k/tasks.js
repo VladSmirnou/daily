@@ -54,6 +54,20 @@ function duplicateCount(text){
     })
     return count;
 }
+
+function toCamelCase(str){
+    const finalString = [];
+    for (let i = 0; i < str.length; i++) {
+      const char = str[i]
+      if (char === '-' || char === '_') {
+        finalString.push(str[++i].toUpperCase())
+      } else {
+        finalString.push(char)
+      }
+    }
+    return finalString.join('');
+}
+
 function solution(string) {
     return string.replace(/[A-Z]/g, (v) => ` ${v}`)
 }
