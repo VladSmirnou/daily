@@ -75,3 +75,11 @@ function solution(string) {
 function inArray(array1,array2){
   return array1.filter(a1Str => array2.findIndex(a2Str => a2Str.includes(a1Str)) > -1).sort((a, b) => a.localeCompare(b))
 }
+
+function count(string) {
+  const res = {}
+  for (const char of string) {
+    res[char] = res[char] + 1 || 1;
+  }
+  return res;
+}
