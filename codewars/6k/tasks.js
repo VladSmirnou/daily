@@ -83,3 +83,13 @@ function count(string) {
   }
   return res;
 }
+function alphabetPosition(text) {
+  const res = [];
+  for (let i = 0; i < text.length; i++) {
+    const charCode = text.toUpperCase().charCodeAt(i);
+    if (64 < charCode && charCode < 91) {
+      res.push(charCode - 64)
+    }
+  }
+  return res.join(' ');
+}
