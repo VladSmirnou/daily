@@ -71,3 +71,7 @@ function toCamelCase(str){
 function solution(string) {
     return string.replace(/[A-Z]/g, (v) => ` ${v}`)
 }
+
+function inArray(array1,array2){
+  return array1.filter(a1Str => array2.findIndex(a2Str => a2Str.includes(a1Str)) > -1).sort((a, b) => a.localeCompare(b))
+}
