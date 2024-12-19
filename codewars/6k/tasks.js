@@ -173,3 +173,95 @@ class Person {
 function factory(x){
   return (array) => array.map(el => el * x)
 }
+
+async function getState(promise) {
+  return await Promise.race([promise, 'pending']).then(
+    res => {
+      if (res === 'pending') {
+        return res
+      } else {
+        return 'fulfilled'
+      }
+    },
+    () => 'rejected'
+  )
+}
+
+async function getState(promise) {
+  const statusIndicator = { status: 'pending' }
+  return await Promise.race([promise, statusIndicator]).then(
+    res => {
+      if (res === statusIndicator) {
+        return res.status
+      } else {
+        return 'fulfilled'
+      }
+    },
+    () => 'rejected'
+  )
+}
+
+function antiOptimizeAsync(task) {
+  const startTime = new Date();
+  const prom = task();
+  const endTime = new Date();
+  return new Promise(res => {
+      setTimeout(res, 11500 - (endTime - startTime), prom)
+  })
+}
+
+function antiOptimizeAsync(task) {
+  const startTime = new Date().getTime();
+  return new Promise(res => {
+    res(task())
+  }).then(result => {
+    const endTime = new Date().getTime();
+    return new Promise(res => {
+      setTimeout(() => res(result), 11500 - (endTime - startTime))
+    })
+  })
+}
+
+function sayJoke(apiUrl, jokeId){
+  return fetch(apiUrl)
+    .then(response => response.json())
+    .then(({ jokes }) => {
+      if (!jokes) {
+        throw new Error(`No jokes at url: ${apiUrl}`)
+      }
+      const joke = jokes.find(({ id }) => id === jokeId)
+      if (!joke) {
+        throw new Error(`No jokes found id: ${jokeId}`);
+      } else {
+        return { saySetup() { return joke.setup }, sayPunchLine() { return joke.punchLine }}
+      }
+    })
+}
+
+async function submitOrder(user) {
+  var shoppingCart, zipCode, shippingRate, orderSuccessful;
+  
+  // Get the current user's shopping cart
+  const p = OrderAPI.getShoppingCartAsync(user).then(function(cart) {
+    shoppingCart = cart;
+  });
+  
+  // Also look up the ZIP code from their profile
+  const p1 = CustomerAPI.getProfileAsync(user).then(function(profile) {
+    zipCode = profile.zipCode;
+  });
+  
+  await Promise.all([p, p1])
+  
+  // Calculate the shipping fees
+  shippingRate = calculateShipping(shoppingCart, zipCode);
+  
+  // Submit the order
+  await OrderAPI.placeOrderAsync(shoppingCart, shippingRate).then(function(success) {
+    orderSuccessful = success;
+  });
+  
+  console.log(`Your order ${orderSuccessful? "was" : "was NOT"} placed successfully`);
+}
+
+async function promiseHelloWorld() { return 'Hello World!' }
